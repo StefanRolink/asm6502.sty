@@ -1,0 +1,31 @@
+% 6502 Assembly language definition for the LaTeX `listings' package
+%
+% The list of instructions and directives are those understood by the
+% Easy 6502 Simulator [https://skilldrick.github.io/easy6502/]
+%
+% Author: Stefan Rolink <Stefan.rolink@nhlstenden.com 
+% Based upon the MIPS stylesheet by Eric Walkingshaw <eric@walkingshaw.net>:
+% @ [https://gist.github.com/walkie/4591789]
+%
+% This code is in the public domain.
+%
+
+\ProvidesPackage{asm6502}
+
+\RequirePackage{listings}
+
+\lstdefinelanguage{asm6502}{%
+  % so listings can detect directives and register names
+  alsoletter={.\$},
+  % comments:
+  morecomment=[l]\;,
+  % instructions
+  sensitive=false,
+  morekeywords={[1]ADC, AND, ASL, BCC, BCS, BEQ, BIT, BMI, BNE, BPL, BRK, 
+    BVC, BVS, CLC, CLD, CLI, CLV, CMP, CPX, CPY, DEC, DEX, DEY, EOR, INC, 
+    INX, INY, JMP, JSR, LDA, LDX, LDY, LSR, NOP, ORA, PHA, PHP, PLA, PLP, 
+    ROL, ROR, RTI, RTS, SBC, SEC, SED, SEI, STA, STX, STY, TAX, TAY, TSX, 
+    TXA, TXS, TYA},
+  % assembler directives:
+  morekeywords={[2]define}
+}[strings,comments,keywords]
